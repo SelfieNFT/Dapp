@@ -1,4 +1,5 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import { Landing } from '../components/Landing';
 
 export default function Home() {
   return (
@@ -7,10 +8,7 @@ export default function Home() {
         <title>NFT Gram</title>
         <meta name="description" content="A decentralize social media app" />
       </Head>
-
-      <main >
-        <h1 className='text-3xl text-green-500 font-bold underline'>NFT Gram</h1>
-      </main>
+      <Landing />
     </div>
-  )
+  );
 }
