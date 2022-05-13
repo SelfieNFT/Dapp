@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
-
 import Head from 'next/head';
-import { Landing } from '../components/Landing';
-import ConnectWallet from '../components/Connect_Wallet';
+
+import { Landing } from '../components/landing';
+import ConnectWallet from '../components/connect_wallet';
+import ConnectButton from '../components/connect_wallet/connect_button';
+import InstallMetamask from '../components/connect_wallet/install_metamask';
 
 const Home = () => {
   const [isConnected, setIsConnected] = useState(false);
@@ -31,10 +33,14 @@ const Home = () => {
           isConnected ? (
             <Landing />
           ) : (
-            <ConnectWallet setIsConnected={setIsConnected} />
+            <ConnectWallet>
+              <ConnectButton setIsConnected={setIsConnected} />
+            </ConnectWallet>
           )
         ) : (
-          'Please install metamask'
+          <ConnectWallet>
+            <InstallMetamask />
+          </ConnectWallet>
         )}
       </main>
     </>
