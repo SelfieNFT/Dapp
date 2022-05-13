@@ -5,6 +5,7 @@ import { Landing } from '../components/landing';
 import ConnectWallet from '../components/connect_wallet';
 import ConnectButton from '../components/connect_wallet/connect_button';
 import InstallMetamask from '../components/connect_wallet/install_metamask';
+import Loading from '../components/loading';
 
 const Home = () => {
   const [isConnected, setIsConnected] = useState(false);
@@ -19,7 +20,7 @@ const Home = () => {
   });
 
   if (hasMetamask === undefined) {
-    return <span>Loading...</span>;
+    return <Loading />;
   }
 
   return (
