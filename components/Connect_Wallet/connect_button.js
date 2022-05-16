@@ -22,7 +22,7 @@ const ConnectButton = ({ setIsConnected }) => {
       className="border-2 border-emerald-400 rounded-lg py-2 px-4 font-medium"
       onClick={() => connect()}
     >
-      Connect Wallet
+      Connect
     </button>
   );
 };
