@@ -1,11 +1,19 @@
+import { useState } from 'react';
 import Head from 'next/head';
+
 import ConnectButton from '../components/connect_wallet/connect_button';
 
 const ConnectWallet = () => {
+  const [inputValue, setInputValue] = useState('');
+
+  const handleChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
   return (
     <>
       <Head>
-        <title>NFT Gram | Home</title>
+        <title>NFT Gram | Connect</title>
         <meta name="description" content="A decentralize social media app" />
       </Head>
       <main className="h-screen">
@@ -14,8 +22,21 @@ const ConnectWallet = () => {
             <div className="">
               <span className="text-2xl font-semibold">NFT Gram</span>
             </div>
-            {/* <ConnectButton setIsConnected={setIsConnected} /> */}
-            <ConnectButton />
+            <div>
+              <form className="flex flex-col">
+                <label className="mb-4">
+                  What is your <spa className="font-semibold">full name</spa>?
+                </label>
+                <input
+                  onChange={handleChange}
+                  type="input"
+                  value={inputValue}
+                  placeholder="Type your name hear"
+                  className="outline-none border-b-2 mb-4 border-emerald-400"
+                />
+                <ConnectButton />
+              </form>
+            </div>
           </div>
         </div>
       </main>
