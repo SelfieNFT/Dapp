@@ -34,7 +34,7 @@ const ConnectWallet = () => {
                   placeholder="Type your name hear"
                   className="outline-none border-b-2 mb-4 border-emerald-400"
                 />
-                <ConnectButton />
+                <ConnectButton inputValue={inputValue} />
               </form>
             </div>
           </div>
